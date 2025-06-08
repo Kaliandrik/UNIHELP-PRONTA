@@ -123,57 +123,6 @@ button {
 /* === COMPONENTES ==== */
 /* ==================== */
 
-/* Botões */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-sm) var(--space-md);
-  border-radius: var(--radius);
-  font-weight: 600;
-  text-align: center;
-  white-space: nowrap;
-  transition: all var(--transition);
-  border: 2px solid transparent;
-}
-
-.btn--primary {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-}
-
-.btn--primary:hover {
-  background-color: var(--color-primary-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-.btn--secondary {
-  background-color: var(--color-secondary);
-  color: var(--color-white);
-}
-
-.btn--secondary:hover {
-  background-color: var(--color-primary-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-.btn--outline {
-  background-color: transparent;
-  color: var(--color-primary);
-  border-color: var(--color-primary);
-}
-
-.btn--outline:hover {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-}
-
-.btn--small {
-  padding: var(--space-xs) var(--space-sm);
-  font-size: 0.875rem;
-}
 
 /* Header */
 .header {
@@ -344,199 +293,431 @@ button {
   color: var(--color-light);
 }
 
-/* Estilo do card de confirmação */
+/* styles.css - Apenas para a seção do meio (confirmação e histórico) */
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+@keyframes progressBar {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+/* Confirmation Container */
 .confirmation-container {
   max-width: 800px;
-  margin: 0 auto 40px;
+  margin: 0 auto 60px;
   padding: 0 20px;
+  animation: fadeIn 0.6s ease-out;
 }
 
+/* Confirmation Card */
 .confirmation-card {
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  background: var(--color-white);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   overflow: hidden;
   margin-bottom: 40px;
+  transform: translateY(0);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  border: 1px solid var(--color-gray-light);
 }
 
+.confirmation-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.confirmation-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--color-success);
+  animation: progressBar 2s ease-in-out;
+}
+
+/* Header Section */
 .confirmation-header {
-  padding: 30px;
-  background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
-  color: white;
+  padding: 40px 30px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: var(--color-white);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.confirmation-header::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  width: 150px;
+  height: 150px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
 }
 
 .confirmation-header i {
-  font-size: 60px;
-  color: #4caf50;
-  margin-bottom: 15px;
+  font-size: 72px;
+  color: var(--color-success);
+  margin-bottom: 20px;
+  display: inline-block;
+  animation: bounce 1s ease infinite alternate;
 }
 
 .confirmation-header h1 {
   margin: 0;
-  font-size: 28px;
+  font-size: 32px;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
 }
 
 .confirmation-header p {
-  margin: 10px 0 0;
+  margin: 15px 0 0;
   opacity: 0.9;
+  font-size: 18px;
+  position: relative;
+  z-index: 1;
 }
 
+/* Details Section */
 .confirmation-details {
-  padding: 30px;
+  padding: 40px;
 }
 
 .confirmation-details h2 {
-  color: #2c3e50;
+  color: var(--color-dark);
   margin-top: 0;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--color-gray-light);
+  font-size: 24px;
+  position: relative;
+}
+
+.confirmation-details h2::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100px;
+  height: 3px;
+  background: var(--color-primary);
 }
 
 .detail-row {
   display: flex;
-  padding: 15px 0;
-  border-bottom: 1px solid #f5f5f5;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--color-gray-light);
+  transition: all 0.3s ease;
+}
+
+.detail-row:hover {
+  background: rgba(59, 130, 246, 0.05);
+  transform: translateX(5px);
 }
 
 .detail-label {
-  font-weight: bold;
-  width: 120px;
-  color: #555;
+  font-weight: 600;
+  width: 150px;
+  color: var(--color-primary-dark);
+  font-size: 16px;
 }
 
 .detail-value {
   flex: 1;
-  color: #333;
+  color: var(--color-dark);
+  font-size: 16px;
 }
 
+/* Actions Section */
 .confirmation-actions {
-  padding: 20px;
+  padding: 30px;
   display: flex;
   justify-content: center;
-  gap: 15px;
-  border-top: 1px solid #eee;
+  gap: 20px;
+  border-top: 1px solid var(--color-gray-light);
+  background: var(--color-light);
 }
 
 .btn {
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-weight: 600;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  z-index: 1;
 }
 
+/* Botão Primário - Estilo Neon */
 .btn--primary {
-  background-color: #4b6cb7;
+  background: linear-gradient(135deg, #6e8efb 0%, #4a6cf7 100%);
   color: white;
-  border: none;
+  box-shadow: 0 4px 20px rgba(110, 142, 251, 0.5);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .btn--primary:hover {
-  background-color: #3a56a0;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(110, 142, 251, 0.6);
 }
 
+.btn--primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #4a6cf7 0%, #6e8efb 100%);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+}
+
+.btn--primary:hover::before {
+  opacity: 1;
+}
+
+/* Botão Outline - Estilo Moderno */
 .btn--outline {
   background: transparent;
-  color: #4b6cb7;
-  border: 2px solid #4b6cb7;
+  color: #4a6cf7;
+  border: 2px solid #4a6cf7;
+  box-shadow: none;
+  position: relative;
 }
 
 .btn--outline:hover {
-  background-color: #f0f4ff;
+  background: rgba(110, 142, 251, 0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(74, 108, 247, 0.2);
+  color: #3a5ce4;
+  border-color: #3a5ce4;
 }
 
-/* Estilos para o histórico de consultas */
+.btn--outline::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(74, 108, 247, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+}
+
+.btn--outline:hover::after {
+  animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(20, 20);
+    opacity: 0;
+  }
+}
+
+/* Ícones para os botões (opcional) */
+.btn i {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover i {
+  transform: translateX(3px);
+}
+
+/* Efeito de onda ao clicar */
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* Versão alternativa - Botão Gradient */
+.btn--gradient {
+  background: linear-gradient(135deg, #6e8efb 0%, #a777e3 100%);
+  color: white;
+  box-shadow: 0 4px 20px rgba(110, 142, 251, 0.5);
+}
+
+.btn--gradient:hover {
+  background: linear-gradient(135deg, #5d7de8 0%, #9b66d8 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(110, 142, 251, 0.6);
+}
+
+/* History Section */
 .past-appointments {
   max-width: 800px;
-  margin: 0 auto 40px;
+  margin: 0 auto 60px;
   padding: 0 20px;
+  animation: fadeIn 0.8s ease-out 0.2s both;
 }
 
 .history-title {
-  color: #2c3e50;
-  margin-bottom: 25px;
+  color: var(--color-dark);
+  margin-bottom: 30px;
   text-align: center;
-  font-size: 24px;
+  font-size: 28px;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.history-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--color-primary);
+  border-radius: 2px;
 }
 
 .history-container {
   display: grid;
-  gap: 20px;
+  gap: 25px;
 }
 
 .history-card {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  padding: 20px;
+  background: var(--color-white);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 25px;
   display: flex;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border-left: 5px solid var(--color-primary);
 }
 
 .history-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 .history-date {
-  font-weight: bold;
-  color: #4b6cb7;
-  min-width: 100px;
-  padding-right: 20px;
-  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-primary);
+  min-width: 120px;
+  padding-right: 25px;
+  font-size: 17px;
+  position: relative;
+  z-index: 1;
 }
 
 .history-content {
   flex: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .history-content h3 {
-  margin: 0 0 5px 0;
-  color: #2c3e50;
-  font-size: 18px;
+  margin: 0 0 8px 0;
+  color: var(--color-dark);
+  font-size: 19px;
+  font-weight: 600;
 }
 
 .history-specialty {
-  color: #7f8c8d;
-  margin: 5px 0;
-  font-size: 15px;
+  color: var(--color-gray);
+  margin: 8px 0;
+  font-size: 16px;
 }
 
 .history-status {
-  display: inline-block;
-  padding: 5px 10px;
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
   border-radius: 20px;
   font-size: 14px;
-  font-weight: bold;
-  margin-top: 10px;
+  font-weight: 600;
+  margin-top: 12px;
 }
 
 .history-status.completed {
-  background-color: #e8f8f5;
-  color: #27ae60;
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--color-success);
 }
 
 .history-status.canceled {
-  background-color: #fdedec;
-  color: #e74c3c;
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--color-danger);
 }
 
 .history-type {
-  display: inline-block;
-  margin-left: 10px;
-  padding: 5px 10px;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 12px;
+  padding: 6px 14px;
   border-radius: 20px;
   font-size: 14px;
-  background-color: #f0f8ff;
-  color: #2980b9;
+  background-color: rgba(36, 123, 163, 0.1);
+  color: var(--color-secondary);
 }
 
-
-
-
+/* Responsive Design */
+@media (max-width: 768px) {
+  .detail-row {
+    flex-direction: column;
+  }
+  
+  .detail-label {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  
+  .confirmation-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .history-card {
+    flex-direction: column;
+  }
+  
+  .history-date {
+    padding-right: 0;
+    margin-bottom: 15px;
+  }
+}
 
 
 

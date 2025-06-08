@@ -59,91 +59,215 @@
   <br>
   <br>
   <br>
+  <br>
+  <br>
     <!--  ESCREVA SEU CONTEUDO LOGO ABAIXO    --> 
   
 
 
 
-    <div class="profile-container">
-    <h1>Dados Pessoais</h1>
-    <img src="07 - Quem somos e configuracoes/img/FOTO DE PERFIL.png" alt="FOTO DE PERFIL" style="width: 200px; height: 200px; border-radius: 200px;">
-
-    <div class="info-section personal-info">
-        <h2>DADOS PESSOAIS</h2>
-
-        <div class="info-field">
-            <div class="info-label">NOME COMPLETO*</div>
-            <input type="text" class="info-input" value="Fernanda Dias Souza">
+<div class="profile-container">
+    <div class="profile-header">
+        <h1>Meu Perfil</h1>
+        <div class="profile-actions">
+            <button class="edit-button">ALTERAR INFORMAÇÕES</button>
+            <button class="logout-button">SAIR</button>
         </div>
-
-        <div class="info-field">
-            <div class="info-label">DATA DE NASCIMENTO*</div>
-            <div class="dob-inputs">
-              <input type="text" maxlength="2" placeholder="DD" class="dob-inputs" value="16">
-              <span></span>
-              <input type="text" maxlength="2" placeholder="MM" class="dob-inputs" value="05">
-              <span></span>
-              <input type="text" maxlength="4" placeholder="AAAA" class="dob-inputs" value="1987">
+    </div>
+    
+    <div class="profile-content">
+        <div class="profile-sidebar">
+            <div class="profile-photo-container">
+                <img src="07 - Quem somos e configuracoes/img/ftdperfil1.jpg" alt="Foto de Perfil" class="profile-photo">
+                <button class="change-photo-btn">Alterar Foto</button>
+            </div>
+            
+            <div class="quick-info">
+                <h3>Informações Rápidas</h3>
+                <div class="quick-info-item">
+                    <span class="quick-info-label">Idade:</span>
+                    <span class="quick-info-value">36 anos</span>
+                </div>
+                <div class="quick-info-item">
+                    <span class="quick-info-label">Membro desde:</span>
+                    <span class="quick-info-value">Jan 2025</span>
+                </div>
+                <div class="quick-info-item">
+                    <span class="quick-info-label">Último acesso:</span>
+                    <span class="quick-info-value">Hoje, 14:30</span>
+                </div>
             </div>
         </div>
-
-    </div>
-
-    <div class="info-section contact-info">
-        <h2>CONTATO</h2>
-
-        <div class="info-field">
-            <div class="info-label">EMAIL*</div>
-            <input type="email" class="info-input" value="fernanda123@gmail.com">
-        </div>
-
-         <div class="info-field">
-            <div class="info-label">TELEFONE*</div>
-            <input type="tel" class="info-input" value="(11) 9-8765-4321">
-        </div>
-
         
-    </div>
+        <div class="profile-main">
+            <div class="info-section personal-info">
+                <h2>DADOS PESSOAIS</h2>
+                <div class="section-content">
+                    <div class="info-field">
+                        <label class="info-label">NOME COMPLETO*</label>
+                        <input type="text" class="info-input" value="Fernanda Dias Souza">
+                    </div>
 
-    <div class="info-section medical-info">
-        <h2>INFORMAÇÕES MÉDICAS</h2>
+                    <div class="info-field">
+                        <label class="info-label">DATA DE NASCIMENTO*</label>
+                        <div class="dob-inputs">
+                            <input type="text" maxlength="2" placeholder="DD" value="16">
+                            <span>/</span>
+                            <input type="text" maxlength="2" placeholder="MM" value="05">
+                            <span>/</span>
+                            <input type="text" maxlength="4" placeholder="AAAA" value="1987">
+                        </div>
+                    </div>
+                    
+                    <div class="info-field">
+                        <label class="info-label">GÊNERO</label>
+                        <select class="info-input">
+                            <option>Feminino</option>
+                            <option>Masculino</option>
+                            <option>Outro</option>
+                            <option>Prefiro não informar</option>
+                        </select>
+                    </div>
+                    
+                    <div class="info-field">
+                        <label class="info-label">CPF</label>
+                        <input type="text" class="info-input" placeholder="423.043.543-80">
+                    </div>
+                </div>
+            </div>
 
-        <div class="info-field">
-            <div class="info-label">TIPO SANGUÍNEO</div>
-            <input type="text" class="info-input pulse" value="O+">
+            <div class="info-section contact-info">
+                <h2>CONTATO</h2>
+                <div class="section-content">
+                    <div class="info-field">
+                        <label class="info-label">EMAIL*</label>
+                        <input type="email" class="info-input" value="fernanda123@gmail.com">
+                    </div>
+
+                    <div class="info-field">
+                        <label class="info-label">TELEFONE*</label>
+                        <input type="tel" class="info-input" value="(11) 9-8765-4321">
+                    </div>
+                    
+                    <div class="info-field">
+                        <label class="info-label">ENDEREÇO</label>
+                        <input type="text" class="info-input" placeholder="Rua, número, complemento">
+                    </div>
+                    
+                    <div class="info-field dual-input">
+                        <div>
+                            <label class="info-label">CIDADE</label>
+                            <input type="text" class="info-input">
+                        </div>
+                        <div>
+                            <label class="info-label">ESTADO</label>
+                            <select class="info-input">
+                                <option>SP</option>
+                                <option>CE</option>
+                                <option>PI</option>
+                                <!-- outros estados -->
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section medical-info">
+                <h2>INFORMAÇÕES MÉDICAS</h2>
+                <div class="section-content">
+                    <div class="info-field">
+                        <label class="info-label">TIPO SANGUÍNEO</label>
+                        <div class="blood-type-input">
+                            <select class="info-input">
+                                <option>A+</option>
+                                <option>A-</option>
+                                <option>B+</option>
+                                <option>B-</option>
+                                <option selected>O+</option>
+                                <option>O-</option>
+                                <option>AB+</option>
+                                <option>AB-</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="info-field">
+                        <label class="info-label">ALERGIAS</label>
+                        <input type="text" class="info-input" value="Penicilina, Amendoim">
+                    </div>
+                    
+                    <div class="info-field">
+                        <label class="info-label">CONDIÇÕES MÉDICAS</label>
+                        <textarea class="info-input" placeholder="Em recuperação pós acidente"></textarea>
+                    </div>
+                    
+                    <div class="info-field">
+                        <label class="info-label">MEDICAÇÕES REGULARES</label>
+                        <textarea class="info-input" placeholder="Liste medicamentos que toma regularmente"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section password-info">
+                <h2>SEGURANÇA</h2>
+                <div class="section-content">
+                    <div class="info-field">
+                        <label class="info-label">SENHA ATUAL*</label>
+                        <div class="password-wrapper">
+                            <input type="password" class="info-input" id="current-password" value="suaSenhaAqui">
+                            <button type="button" class="toggle-password" aria-label="Mostrar/Ocultar senha">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" viewBox="0 0 24 24">
+                                    <path d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/>
+                                    <circle cx="12" cy="12" r="2.5"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="info-field">
+                        <label class="info-label">NOVA SENHA</label>
+                        <div class="password-wrapper">
+                            <input type="password" class="info-input" id="new-password" placeholder="Digite a nova senha">
+                            <button type="button" class="toggle-password" aria-label="Mostrar/Ocultar senha">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" viewBox="0 0 24 24">
+                                    <path d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/>
+                                    <circle cx="12" cy="12" r="2.5"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="password-strength">
+                            <div class="strength-bar weak"></div>
+                            <div class="strength-text">Senha fraca</div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-field">
+                        <label class="info-label">CONFIRMAR NOVA SENHA</label>
+                        <div class="password-wrapper">
+                            <input type="password" class="info-input" id="confirm-password" placeholder="Confirme a nova senha">
+                            <button type="button" class="toggle-password" aria-label="Mostrar/Ocultar senha">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" viewBox="0 0 24 24">
+                                    <path d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/>
+                                    <circle cx="12" cy="12" r="2.5"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-actions">
+                <button class="cancel-button">CANCELAR</button>
+                <button class="save-button">SALVAR ALTERAÇÕES</button>
+            </div>
         </div>
-
-        <div class="info-field">
-            <div class="info-label">ALERGIAS</div>
-            <input type="text" class="info-input" value="Penicilina, Amendoim">
-        </div>
     </div>
-
-    <div class="info-section password-info">
-  <h2>SENHA</h2>
-  <div class="info-field">
-    <div class="info-label">SENHA*</div>
-    <div class="password-wrapper">
-      <input type="password" class="info-input" id="password" value="suaSenhaAqui">
-      <button type="button" class="toggle-password" aria-label="Mostrar/Ocultar senha">
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" viewBox="0 0 24 24">
-    <path d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/>
-    <circle cx="12" cy="12" r="2.5"/>
-  </svg>
-</button>
-
-    </div>
-  </div>
 </div>
-
-    <button class="edit-button">ALTERAR INFORMAÇÕES</button>
-</div>
-
 
 
   <!-- RODAPÉ -->
   <footer class="footer">
-    <img class="footer-logo" src="img/UniHelp Logo.png" alt="UniHelp Logo" />
+    <img class="footer-logo" src="07 - Quem somos e configuracoes/img/UniHelp Logo.png" alt="UniHelp Logo" />
     <div class="footer-container">
       <div class="footer-column footer-brand">
         <h2>Seu bem-estar é a<br><span class="highlight">nossa prioridade.</span></h2>
@@ -252,25 +376,122 @@
 
 
 
-<!--SCRIPT PARA O OLHO-->
+ <style>
+        /* Estilo básico para visualização */
+        .profile-container {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .profile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .profile-actions button {
+            margin-left: 10px;
+            padding: 10px;
+        }
+
+        .profile-content {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .profile-sidebar {
+            width: 30%;
+            padding-right: 20px;
+            border-right: 1px solid #ccc;
+        }
+
+        .profile-main {
+            width: 70%;
+            padding-left: 20px;
+        }
+
+        .info-section {
+            margin-bottom: 30px;
+        }
+
+        .info-section h2 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .info-field {
+            margin-bottom: 15px;
+        }
+
+        .info-label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .info-input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .dual-input {
+            display: flex;
+            gap: 10px;
+        }
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-wrapper input {
+            width: 100%;
+        }
+
+        .form-actions {
+            text-align: right;
+        }
+
+        .form-actions button {
+            padding: 10px 20px;
+            margin-left: 10px;
+        }
+
+        .password-strength {
+            margin-top: 5px;
+        }
+
+        .strength-bar {
+            width: 100%;
+            height: 5px;
+            background-color: red;
+        }
+
+        .strength-text {
+            font-size: 12px;
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="profile-container">
+    <!-- Todo o HTML fornecido acima permanece igual aqui -->
+    <!-- ... (omiti para economizar espaço, pois você já forneceu tudo corretamente) -->
+</div>
+
 <script>
-  const togglePassword = document.querySelector('.toggle-password');
-  const passwordInput = document.getElementById('password');
-
-  const eyeOpen = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" viewBox="0 0 24 24">
-    <path d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/>
-    <circle cx="12" cy="12" r="2.5"/>
-  </svg>`;
-
-  const eyeClosed = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" viewBox="0 0 24 24">
-    <path d="M17.94 17.94A10.43 10.43 0 0 1 12 19c-7 0-11-7-11-7a16.64 16.64 0 0 1 2.83-4.17m4.2-3.1a5 5 0 0 1 6.71 6.71M1 1l22 22" stroke="black" stroke-width="2" fill="none" stroke-linecap="round"/>
-  </svg>`;
-
-  togglePassword.addEventListener('click', () => {
-    const type = passwordInput.type === 'password' ? 'text' : 'password';
-    passwordInput.type = type;
-    togglePassword.innerHTML = type === 'password' ? eyeOpen : eyeClosed;
-  });
+    document.querySelectorAll('.toggle-password').forEach(button => {
+        button.addEventListener('click', () => {
+            const input = button.previousElementSibling;
+            const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+            input.setAttribute('type', type);
+        });
+    });
 </script>
 
 </body>
