@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UniHelp - Plataforma de agendamento de consultas médicas especializadas. Conectamos pacientes a profissionais de saúde.">
+  <meta name="keywords" content="consulta médica, agendamento online, saúde, fisioterapia, psicólogo">
+  <meta name="author" content="UniHelp">
+  <meta property="og:title" content="UniHelp - Agendamento de Consultas">
+  <meta property="og:type" content="website">
+  <title>Chat Médico - UniHelp</title>
+  <!-- Preload de recursos críticos -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" as="style">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="08 - tela mensagem e notificacao/mensagens.css">
+  <link rel="shortcut icon" href="02 - Cadastro 2.0/ImagensUniHelp/UniHelp-ico.ico" type="image/x-icon"></head>
+<body>
+  <!-- Skip Navigation Link (Acessibilidade) -->
+  <a href="#main-content" class="skip-link">Pular para conteúdo principal</a>
+
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header__inner">
+        <div class="logo">
+          <a href="/">
+            <img src="08 - tela mensagem e notificacao/img/UniHelp Logo.png" 
+                 alt="UniHelp - Logo" class="logo__img">
+          </a>
+        </div>        
+        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="hamburger"></span>
+        </button>
+        
+        <nav class="nav" id="primary-navigation" role="navigation" aria-label="Navegação principal">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="painel_user.html" class="nav__link" aria-current="page">Início</a></li>
+            <li class="nav__item"><a href="#services" class="nav__link">Serviços</a></li>
+            <li class="nav__item"><a href="quem_somos.html" class="nav__link">Sobre Nós</a></li>
+            <li class="nav__item"><a href="#contact" class="nav__link">Contato</a></li>
+            <span id="horaData">00:00 | 00/00/0000</span>
+            <li class="nav__item">
+              <a href="perfil_usuário.html" class="user-profile" aria-label="Perfil do usuário">
+                <img src="07 - Quem somos e configuracoes/img/FOTO DE PERFIL.png"
+                     alt="Foto do perfil" width="40" height="40">
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Conteúdo Principal -->
+  <main class="main-content" id="main-content">
+    <div class="page-header">
+      <h1>Chat Médico</h1>
+      <p>Converse com nossos profissionais de saúde</p>
+    </div>
+    
+    <div class="chat-container">
+      <!-- Lista de Médicos -->
+      <div class="doctors-sidebar">
+        <div class="doctors-header">
+          <h2>Profissionais de Saúde</h2>
+        </div>
+        
+        <div class="doctors-list" id="doctorsList">
+          <!-- Médicos serão preenchidos via JS -->
+        </div>
+      </div>
+      
+      <!-- Área do Chat -->
+      <div class="chat-area">
+        <div class="chat-header">
+          <img id="currentDoctorAvatar" class="chat-avatar">
+          <div class="chat-doctor-info">
+            <div class="chat-doctor-name" id="currentDoctorName">Selecione um médico</div>
+          </div>
+          <div class="chat-actions">
+            <button class="chat-action-btn" title="Reiniciar conversa" id="resetChatBtn">
+              <i class="fas fa-redo"></i>
+            </button>
+          </div>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages">
+          <div class="message received">
+            <div class="message-content">
+              <div class="message-text">Olá! Selecione um profissional de saúde à esquerda para iniciar sua consulta.</div>
+              <div class="message-time" id="initialTime">10:30</div>
+            </div>
+          </div>
+          
+          <div class="typing-indicator" id="typingIndicator">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        
+        <div class="chat-input-area">
+          <div class="input-actions">
+            <button class="input-action" id="attachFile" title="Anexar arquivo">
+              <i class="fas fa-paperclip"></i>
+            </button>
+          </div>
+          
+          <div class="message-input-container">
+            <textarea class="message-input" placeholder="Digite sua mensagem..." rows="1" id="messageInput" disabled></textarea>
+            <button class="send-btn" id="sendBtn" disabled>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <img class="footer-logo" src="07 - Quem somos e configuracoes/img/UniHelp Logo.png" alt="UniHelp Logo" />
+    <div class="footer-container">
+      <div class="footer-column footer-brand">
+        <h2>Seu bem-estar é a<br><span class="highlight">nossa prioridade.</span></h2>
+        <p>Tem alguma dúvida ou precisa de ajuda? Envie uma mensagem e retornaremos o mais breve possível.</p>
+        <div class="footer-newsletter">
+          <input type="email" placeholder="Digite seu E-mail" />
+          <button><span>Enviar</span></button>
+        </div>
+        <p class="footer-copy">© 2025 UniHelp — Todos os direitos reservados.<br>
+          Desenvolvido por Kaliandrik, Aderlangio, Mateus e Guilherme.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Suporte</h3>
+        <ul>
+          <li><a href="#">Agendar Consulta</a></li>
+          <li><a href="#">Dúvidas Frequentes</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+          <li><a href="#">Termos de Uso</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Informações úteis</h3>
+        <ul>
+          <li><a href="#">Sobre a Empresa</a></li>
+          <li><a href="#">Equipe Profissional</a></li>
+          <li><a href="#">Serviços Oferecidos</a></li>
+          <li><a href="#">Convênios Atendidos</a></li>
+          <li><a href="#">Blog / Notícias</a></li>
+        </ul>
+      </div>
+
+
+      <div class="social">
+        <h3>Siga-nos</h3>
+        <ul>
+          <li><i class="fab fa-facebook-square"></i> <span>Facebook</span></li>
+          <li><i class="fab fa-instagram"></i> <span>Instagram</span></li>
+          <li><i class="fab fa-x-twitter"></i> <span>X</span></li>
+          <li><i class="fab fa-linkedin"></i> <span>LinkedIn</span></li>
+          <li><i class="fab fa-youtube"></i> <span>YouTube</span></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="08 - tela mensagem e notificacao/mensagens.js"></script>
+</body>
+</html>

@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UniHelp - Plataforma de agendamento de consultas médicas especializadas. Conectamos pacientes a profissionais de saúde.">
+  <meta name="keywords" content="consulta médica, agendamento online, saúde, fisioterapia, psicólogo">
+  <meta name="author" content="UniHelp">
+  <meta property="og:title" content="UniHelp - Agendamento de Consultas">
+  <meta property="og:type" content="website">
+  
+  <title>cabecalho</title>
+  
+  <!-- Preload de recursos críticos -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" as="style">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="06 - farmacia solidaria/confirmacaodoacao.css">
+  <link rel="shortcut icon" href="02 - Cadastro 2.0/ImagensUniHelp/UniHelp-ico.ico" type="image/x-icon"></head>
+<body>
+  <!-- Skip Navigation Link (Acessibilidade) -->
+  <a href="#main-content" class="skip-link">Pular para conteúdo principal</a>
+
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header__inner">
+        <div class="logo">
+          <a href="/">
+            <img src="06 - farmacia solidaria/img/UniHelp Logo.png" alt="UniHelp - Logo" width="150" height="50" class="logo__img">
+          </a>
+        </div>
+        
+        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="hamburger"></span>
+        </button>
+        
+        <nav class="nav" id="primary-navigation" role="navigation" aria-label="Navegação principal">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="painel_user.html" class="nav__link" aria-current="page">Início</a></li>
+            <li class="nav__item"><a href="#services" class="nav__link">Serviços</a></li>
+            <li class="nav__item"><a href="quem_somos.html" class="nav__link">Sobre Nós</a></li>
+            <li class="nav__item"><a href="#contact" class="nav__link">Contato</a></li>
+            <span id="horaData">00:00 | 00/00/0000</span>
+            <li class="nav__item">
+              <a href="perfil_usuário.html" class="user-profile" aria-label="Perfil do usuário">
+                <img src="07 - Quem somos e configuracoes/img/FOTO DE PERFIL.png" alt="Foto do perfil" width="40" height="40">
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <br>
+  <br>
+  <br>
+  <br>
+
+    <!--  ESCREVA SEU CONTEUDO LOGO ABAIXO    --> 
+  
+ <style>
+    :root {
+      --color-primary: #2E558F;
+      --color-primary-dark: #1b3f66;
+      --color-accent: #10b981;
+      --color-white: #ffffff;
+      --color-light: #f8fafc;
+      --color-gray: #64748b;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--color-light);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    .confirmation-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: var(--color-white);
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    
+    .confirmation-icon {
+      font-size: 5rem;
+      color: var(--color-accent);
+      margin-bottom: 1.5rem;
+    }
+    
+    .confirmation-title {
+      color: var(--color-primary);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .confirmation-message {
+      color: var(--color-gray);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    
+    .request-details {
+      text-align: left;
+      background: var(--color-light);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+    
+    .detail-item {
+      margin-bottom: 1rem;
+    }
+    
+    .detail-label {
+      font-weight: bold;
+      color: var(--color-primary-dark);
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background: var(--color-primary);
+      color: var(--color-white);
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      margin-top: 1rem;
+    }
+    
+    .btn:hover {
+      background: var(--color-primary-dark);
+    }
+    
+    @media (max-width: 768px) {
+      .confirmation-container {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+      
+      .confirmation-title {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="confirmation-container">
+    <div class="confirmation-icon">
+      <i class="fas fa-check-circle"></i>
+    </div>
+    
+    <h1 class="confirmation-title">Solicitação Confirmada!</h1>
+    
+    <p class="confirmation-message">
+      Sua solicitação foi recebida com sucesso. Nossa equipe entrará em contato em até 24 horas para confirmar a disponibilidade e agendar a entrega.
+    </p>
+    
+    <div class="request-details">
+      <h3>Detalhes da Solicitação:</h3>
+      
+      <div class="detail-item">
+        <span class="detail-label">Tipo de Equipamento:</span>
+        <span id="equipmentType"></span>
+      </div>
+      
+      <div class="detail-item">
+        <span class="detail-label">Nome do Paciente:</span>
+        <span id="patientName"></span>
+      </div>
+      
+      <div class="detail-item">
+        <span class="detail-label">Tempo Previsto de Uso:</span>
+        <span id="duration"></span>
+      </div>
+      
+      <div class="detail-item">
+        <span class="detail-label">Endereço para Entrega:</span>
+        <span id="deliveryAddress"></span>
+      </div>
+      
+      <div class="detail-item">
+        <span class="detail-label">Data da Solicitação:</span>
+        <span id="requestDate"></span>
+      </div>
+    </div>
+    
+    <p class="confirmation-message">
+      Um e-mail de confirmação foi enviado para o endereço fornecido. Qualquer dúvida, entre em contato através do nosso suporte.
+    </p>
+    
+    <a href="painel_user.html" class="btn">Voltar à Página Inicial</a>
+  </div>
+
+  <style>
+    :root {
+  /* Cores (mantendo suas variáveis originais) */
+  --color-primary: #2E558F;
+  --color-primary-dark: #1b3f66;
+  --color-primary-light: #3b82f6;
+  --color-secondary: #247ba3;
+  --color-accent: #10b981;
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
+  --color-success: #10b981;
+  --color-dark: #1e293b;
+  --color-light: #f8fafc;
+  --color-gray: #64748b;
+  --color-gray-light: #e2e8f0;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Novas variáveis para espaçamento consistente */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+
+  /* Bordas */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-full: 9999px;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container principal */
+.confirmation-container {
+  max-width: 800px;
+  width: 90%;
+  margin: var(--space-xl) auto;
+  padding: var(--space-lg);
+  background: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito decorativo no topo */
+.confirmation-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+}
+
+/* Ícone de confirmação */
+.confirmation-icon {
+  font-size: 4.5rem;
+  color: var(--color-success);
+  margin-bottom: var(--space-md);
+  animation: bounce 1s ease;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-20px);}
+  60% {transform: translateY(-10px);}
+}
+
+/* Título */
+.confirmation-title {
+  color: var(--color-primary);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  line-height: 1.2;
+}
+
+/* Mensagem */
+.confirmation-message {
+  color: var(--color-gray);
+  font-size: 1.125rem;
+  margin-bottom: var(--space-lg);
+}
+
+/* Detalhes da solicitação */
+.request-details {
+  text-align: left;
+  background: var(--color-gray-light);
+  padding: var(--space-md);
+  border-radius: var(--border-radius-md);
+  margin: var(--space-lg) 0;
+  border-left: 4px solid var(--color-primary);
+}
+
+.request-details h3 {
+  color: var(--color-primary-dark);
+  margin-bottom: var(--space-sm);
+  font-size: 1.25rem;
+}
+
+.detail-item {
+  margin-bottom: var(--space-sm);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  min-width: 180px;
+  margin-right: var(--space-sm);
+}
+
+/* Versão definitiva - sem bugs */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  background: var(--color-primary); /* Cor sólida como base */
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  box-shadow:
+    0 4px 6px rgba(46, 85, 143, 0.15),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+  gap: var(--space-xs);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  min-width: 180px;
+  letter-spacing: 0.5px;
+}
+
+/* Gradiente como overlay (solução definitiva) */
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  color: white;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+  border-radius: inherit;
+}
+
+/* Efeito hover */
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-secondary));
+  color: white;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -2;
+  border-radius: inherit;
+}
+
+.btn:hover {
+      color: white;
+
+  transform: translateY(-3px);
+  box-shadow:
+    0 10px 15px rgba(46, 85, 143, 0.2),
+    0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover::before {
+  opacity: 1;
+}
+
+.btn:hover::after {
+  opacity: 0;
+}
+
+/* Efeito ativo */
+.btn:active {
+  transform: translateY(1px);
+  box-shadow:
+    0 2px 5px rgba(46, 85, 143, 0.2),
+    0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Ícone */
+.btn i {
+  font-size: 1.25em;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover i {
+  transform: translateX(3px);
+}
+
+/* Versões alternativas */
+.btn-primary {
+  animation: pulse 2s infinite;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  box-shadow: none;
+}
+
+.btn-outline:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(46, 85, 143, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(46, 85, 143, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(46, 85, 143, 0); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .confirmation-container {
+    margin: var(--space-md) auto;
+    padding: var(--space-md);
+  }
+  
+  .confirmation-title {
+    font-size: 1.75rem;
+  }
+  
+  .detail-item {
+    flex-direction: column;
+  }
+  
+  .detail-label {
+    margin-bottom: var(--space-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .confirmation-icon {
+    font-size: 3.5rem;
+  }
+  
+  .confirmation-title {
+    font-size: 1.5rem;
+  }
+  
+  .confirmation-message {
+    font-size: 1rem;
+  }
+}
+  </style>
+</head>
+<body>
+ 
+
+  <script>
+  function getUrlParams() {
+    return Object.fromEntries(new URLSearchParams(window.location.search));
+  }
+
+  function formatDate(date) {
+    const options = { 
+      day: '2-digit', 
+      month: '2-digit', 
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    };
+    return date.toLocaleDateString('pt-BR', options);
+  }
+
+  function displayRequestData() {
+    const params = getUrlParams();
+    
+    // Mapeamentos para valores amigáveis
+    const equipmentTypes = {
+      'wheelchair': 'Cadeira de rodas',
+      'crutches': 'Muletas',
+      'walker': 'Andador',
+      'oxygen': 'Concentrador de oxigênio',
+      'other': params.otherEquipment || 'Outro equipamento'
+    };
+    
+    const durationTypes = {
+      'temporary': 'Uso temporário (até 3 meses)',
+      'long_term': 'Uso de longo prazo (3-12 meses)',
+      'permanent': 'Uso permanente'
+    };
+    
+    // Preencher os dados
+    if (params.equipmentType) {
+      document.getElementById('equipmentType').textContent = 
+        equipmentTypes[params.equipmentType] || 'Não especificado';
+    }
+    
+    if (params.duration) {
+      document.getElementById('duration').textContent = 
+        durationTypes[params.duration] || 'Não especificado';
+    }
+    
+    if (params.patientName) {
+      document.getElementById('patientName').textContent = 
+        params.patientName || 'Não informado';
+    }
+    
+    if (params.deliveryAddress) {
+      document.getElementById('deliveryAddress').textContent = 
+        params.deliveryAddress || 'Não informado';
+    }
+    
+    // Preencher a data atual
+    document.getElementById('requestDate').textContent = 
+      formatDate(new Date());
+  }
+
+  window.addEventListener('DOMContentLoaded', displayRequestData);
+</script>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <img class="footer-logo" src="07 - Quem somos e configuracoes/img/UniHelp Logo.png" alt="UniHelp Logo" />
+    <div class="footer-container">
+      <div class="footer-column footer-brand">
+        <h2>Seu bem-estar é a<br><span class="highlight">nossa prioridade.</span></h2>
+        <p>Tem alguma dúvida ou precisa de ajuda? Envie uma mensagem e retornaremos o mais breve possível.</p>
+        <div class="footer-newsletter">
+          <input type="email" placeholder="Digite seu E-mail" />
+          <button><span>Enviar</span></button>
+        </div>
+        <p class="footer-copy">© 2025 UniHelp — Todos os direitos reservados.<br>
+          Desenvolvido por Kaliandrik, Aderlangio, Mateus e Guilherme.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Suporte</h3>
+        <ul>
+          <li><a href="#">Agendar Consulta</a></li>
+          <li><a href="#">Dúvidas Frequentes</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+          <li><a href="#">Termos de Uso</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Informações úteis</h3>
+        <ul>
+          <li><a href="#">Sobre a Empresa</a></li>
+          <li><a href="#">Equipe Profissional</a></li>
+          <li><a href="#">Serviços Oferecidos</a></li>
+          <li><a href="#">Convênios Atendidos</a></li>
+          <li><a href="#">Blog / Notícias</a></li>
+        </ul>
+      </div>
+
+
+      <div class="social">
+        <h3>Siga-nos</h3>
+        <ul>
+          <li><i class="fab fa-facebook-square"></i> <span>Facebook</span></li>
+          <li><i class="fab fa-instagram"></i> <span>Instagram</span></li>
+          <li><i class="fab fa-x-twitter"></i> <span>X</span></li>
+          <li><i class="fab fa-linkedin"></i> <span>LinkedIn</span></li>
+          <li><i class="fab fa-youtube"></i> <span>YouTube</span></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Menu Mobile
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    
+    if (navToggle && nav) {
+      navToggle.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+        nav.setAttribute('data-visible', !isExpanded);
+      });
+    }
+
+    // Atualizar data e hora
+    function updateDateTime() {
+      const now = new Date();
+      const horaDataEl = document.getElementById('horaData');
+      
+      if (horaDataEl) {
+        // Formatar hora (HH:MM)
+        const horas = String(now.getHours()).padStart(2, '0');
+        const minutos = String(now.getMinutes()).padStart(2, '0');
+        
+        // Nomes dos dias da semana e meses por extenso
+        const diasSemana = [
+          'domingo', 'segunda-feira', 'terça-feira', 
+          'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'
+        ];
+        
+        const meses = [
+          'janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho',
+          'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'
+        ];
+        
+        // Obter componentes da data
+        const diaSemana = diasSemana[now.getDay()];
+        const dia = now.getDate();
+        const mes = meses[now.getMonth()];
+        const ano = now.getFullYear();
+        
+        // Formatar a exibição
+        horaDataEl.textContent = `${horas}:${minutos} | ${diaSemana}, ${dia} de ${mes} de ${ano}`;
+      }
+    }
+    
+    // Atualizar imediatamente e depois a cada minuto
+    updateDateTime();
+    setInterval(updateDateTime, 60000);
+
+    // Restante do seu código JavaScript permanece igual...
+    // [Manter o restante do código original]
+  });
+</script>
+
+</body>
+</html>

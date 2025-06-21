@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="UniHelp - Plataforma de agendamento de consultas médicas especializadas. Conectamos pacientes a profissionais de saúde.">
+  <meta name="keywords" content="consulta médica, agendamento online, saúde, fisioterapia, psicólogo">
+  <meta name="author" content="UniHelp">
+  <meta property="og:title" content="UniHelp - Agendamento de Consultas">
+  <meta property="og:type" content="website">
+  <title>UniHelp - Dashboard</title>
+  <!-- Preload de recursos críticos -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" as="style">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="shortcut icon" href="02 - Cadastro 2.0/ImagensUniHelp/UniHelp-ico.ico" type="image/x-icon">
+  <link rel="stylesheet" href="04 - Painel_user/user.css">
+</head>
+
+<body>
+  <div class="background-animation">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+  <!-- Skip Navigation Link (Acessibilidade) -->
+  <a href="#main-content" class="skip-link">Pular para conteúdo principal</a>
+
+  <!-- HEADER - Mantido conforme seu código original -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header__inner">
+        <div class="logo">
+          <a href="/">
+            <img src="04 - Painel_user/img/UniHelp Logo.png" alt="UniHelp - Logo" width="150" height="50"
+              class="logo__img">
+          </a>
+        </div>
+
+        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="hamburger"></span>
+        </button>
+
+        <nav class="nav" id="primary-navigation" role="navigation" aria-label="Navegação principal">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="painel_user.html" class="nav__link" aria-current="page">Início</a></li>
+            <li class="nav__item"><a href="#services" class="nav__link">Serviços</a></li>
+            <li class="nav__item"><a href="quem_somos.html" class="nav__link">Sobre Nós</a></li>
+            <li class="nav__item"><a href="#contact" class="nav__link">Contato</a></li>
+            <span id="horaData">00:00 | 00/00/0000</span>
+            <li class="nav__item">
+              <a href="perfil_usuário.html" class="user-profile" aria-label="Perfil do usuário">
+                <img src="07 - Quem somos e configuracoes/img/FOTO DE PERFIL.png" Foto do perfil" width="40"
+                  height="40">
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteúdo principal substituído -->
+  <main class="dashboard-content">
+    <div class="container">
+      <div class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+          <div class="page-title">
+            <h1>Bem-vinda, Maria.</h1>
+            <p>Seu resumo diário e atividades</p>
+          </div>
+
+          <a href="telaconsulta.html">
+          <div class="page-actions">
+            <button class="btn btn-primary">
+              <i class="fas fa-plus"></i>
+              Nova Consulta
+            </button>
+          </div>
+        </div>
+        </a>
+
+        <!-- Stats Grid -->
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-header">
+              <div class="stat-title">Consultas Hoje</div>
+              <div class="stat-icon blue">
+                <i class="fas fa-calendar-check"></i>
+              </div>
+            </div>
+            <div class="stat-value">2</div>
+            <div class="stat-change positive">
+              <i class="fas fa-arrow-up"></i>
+              1 nova
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <div class="stat-title">Equipamentos</div>
+              <div class="stat-icon green">
+                <i class="fas fa-wheelchair"></i>
+              </div>
+            </div>
+            <div class="stat-value">3</div>
+            <div class="stat-change">
+              <i class="fas fa-equals"></i>
+              estável
+            </div>
+          </div>
+
+          <a href="mensagens.html" class="stat-card" style="display: block; text-decoration: none; color: inherit;">
+            <div class="stat-header">
+              <div class="stat-title">Mensagens</div>
+              <div class="stat-icon orange">
+                <i class="fas fa-envelope"></i>
+              </div>
+            </div>
+            <div class="stat-value">5</div>
+            <div class="stat-change positive">
+              <i class="fas fa-arrow-up"></i>
+              2 novas
+            </div>
+          </a>
+
+          <a href="notificacoes.html" class="stat-card" style="display: block; text-decoration: none; color: inherit;">
+            <div class="stat-header">
+              <div class="stat-title">Notificações</div>
+              <div class="stat-icon blue">
+                <i class="fas fa-bell"></i>
+              </div>
+            </div>
+            <div class="stat-value">2</div>
+            <div class="stat-change positive">
+              <i class="fas fa-arrow-up"></i>
+              Novas Notificações.
+            </div>
+          </a>
+        </div>
+         
+
+        <!-- Main Grid -->
+        <div class="main-grid">
+          <!-- Left Column -->
+          <div>
+            <!-- Appointments Card -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Próximas Consultas</h3>
+                <div class="card-actions">
+                  <button class="card-action">
+                    <i class="fas fa-ellipsis-v"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <ul class="appointment-list">
+                  <li class="appointment-item">
+                    <div class="appointment-time">09:00</div>
+                    <div class="appointment-details">
+                      <div class="appointment-title">Consulta com Dr. André</div>
+                      <div class="appointment-description">Cardiologia - Hospital São Lucas</div>
+                    </div>
+                    <div class="appointment-status status-confirmed">Confirmada</div>
+                  </li>
+                  <li class="appointment-item">
+                    <div class="appointment-time">14:30</div>
+                    <div class="appointment-details">
+                      <div class="appointment-title">Fisioterapia</div>
+                      <div class="appointment-description">Clínica FisioMove - Dra. Carla</div>
+                    </div>
+                    <div class="appointment-status status-pending">Pendente</div>
+                  </li>
+                  <li class="appointment-item">
+                    <div class="appointment-time">16:00</div>
+                    <div class="appointment-details">
+                      <div class="appointment-title">Retorno Nutricionista</div>
+                      <div class="appointment-description">Dra. Juliana - Online</div>
+                    </div>
+                    <div class="appointment-status status-confirmed">Confirmada</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="card" style="margin-top: 1.5rem;">
+              <div class="card-header">
+                <h3 class="card-title">Atividades Recentes</h3>
+                <div class="card-actions">
+                  <button class="card-action">
+                    <i class="fas fa-ellipsis-v"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <ul class="activity-list">
+                  <li class="activity-item">
+                    <div class="activity-dot"></div>
+                    <div class="activity-time">Hoje, 08:45</div>
+                    <div class="activity-content">Você confirmou a consulta com Dr. André para hoje às 09:00</div>
+                  </li>
+                  <li class="activity-item">
+                    <div class="activity-dot"></div>
+                    <div class="activity-time">Ontem, 16:30</div>
+                    <div class="activity-content">Solicitação de cadeira de rodas aprovada</div>
+                  </li>
+                  <li class="activity-item">
+                    <div class="activity-dot"></div>
+                    <div class="activity-time">Ontem, 14:15</div>
+                    <div class="activity-content">Nova mensagem recebida da Dra. Olívia</div>
+                  </li>
+                  <li class="activity-item">
+                    <div class="activity-dot"></div>
+                    <div class="activity-time">25/05/2025, 10:00</div>
+                    <div class="activity-content">Consulta com neurologista marcada para 02/06</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Messages Card -->
+            <div class="card" style="margin-top: 1.5rem;">
+              <div class="card-header">
+                <h3 class="card-title">Mensagens</h3>
+                <div class="card-actions">
+                  <button class="card-action">
+                    <i class="fas fa-ellipsis-v"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <ul class="message-list">
+                  <li class="message-item message-unread">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. André" class="message-avatar">
+                    <div class="message-content">
+                      <div class="message-header">
+                        <div class="message-sender">Dr. André</div>
+                        <div class="message-time">08:30</div>
+                      </div>
+                      <div class="message-preview">Confirmando nossa consulta para hoje às 9h. Por favor, traga os
+                        exames...</div>
+                    </div>
+                  </li>
+                  <li class="message-item">
+                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Dra. Olívia"
+                      class="message-avatar">
+                    <div class="message-content">
+                      <div class="message-header">
+                        <div class="message-sender">Dra. Olívia</div>
+                        <div class="message-time">Ontem</div>
+                      </div>
+                      <div class="message-preview">Os resultados dos seus exames já estão disponíveis no portal...</div>
+                    </div>
+                  </li>
+                  <li class="message-item">
+                    <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="FisioMove" class="message-avatar">
+                    <div class="message-content">
+                      <div class="message-header">
+                        <div class="message-sender">Clínica FisioMove</div>
+                        <div class="message-time">Ontem</div>
+                      </div>
+                      <div class="message-preview">Sua sessão de fisioterapia foi remarcada conforme solicitado...</div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column -->
+          <div>
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+              <a href="telaconsulta.html" class="action-btn">
+                <div class="action-icon blue">
+                  <i class="fas fa-calendar-plus"></i>
+                </div>
+                <div class="action-title">Agendar Consulta</div>
+                <div class="action-desc">Marque uma nova consulta médica</div>
+              </a>
+
+              <a href="farmaciasolicitar.html" class="action-btn">
+                <div class="action-icon green">
+                  <i class="fas fa-procedures"></i>
+                </div>
+                <div class="action-title">Solicitar Equipamento</div>
+                <div class="action-desc">Cadeiras, muletas e outros</div>
+              </a>
+
+              <a href="farmaciahome.html" class="action-btn">
+                <div class="action-icon purple">
+                  <i class="fas fa-hand-holding-medical"></i> <!-- Ícone de mão segurando remédio -->
+                </div>
+                <div class="action-title">Farmácia Solidária</div>
+                <div class="action-desc">Doe e Solicite equipamentos.</div>
+              </a>
+
+              <a href="suporte.html" class="action-btn">
+                <div class="action-icon orange">
+                  <i class="fas fa-ambulance"></i>
+                </div>
+                <div class="action-title">Suporte</div>
+                <div class="action-desc">Solicite ajuda imediata</div>
+              </a>
+            </div>
+            <!-- Calendar Card -->
+            <div class="card" style="margin-top: 1.5rem;">
+              <div class="card-header">
+                <h3 class="card-title">Calendário</h3>
+                <div class="card-actions">
+                  <button class="card-action">
+                    <i class="fas fa-ellipsis-v"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="calendar">
+                  <div class="calendar-header">
+                    <div class="calendar-title">Junho 2025</div>
+                    <div class="calendar-nav">
+                      <button class="calendar-nav-btn">
+                        <i class="fas fa-chevron-left"></i>
+                      </button>
+                      <button class="calendar-nav-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="calendar-weekdays">
+                    <div>Dom</div>
+                    <div>Seg</div>
+                    <div>Ter</div>
+                    <div>Qua</div>
+                    <div>Qui</div>
+                    <div>Sex</div>
+                    <div>Sáb</div>
+                  </div>
+
+                  <div class="calendar-days">
+                    <div class="calendar-day day-other">25</div>
+                    <div class="calendar-day day-other">26</div>
+                    <div class="calendar-day day-other">27</div>
+                    <div class="calendar-day day-other">28</div>
+                    <div class="calendar-day day-other">29</div>
+                    <div class="calendar-day day-other">30</div>
+                    <div class="calendar-day">1</div>
+                    <div class="calendar-day">2</div>
+                    <div class="calendar-day">3</div>
+                    <div class="calendar-day">4</div>
+                    <div class="calendar-day">5</div>
+                    <div class="calendar-day day-event">6</div>
+                    <div class="calendar-day">7</div>
+                    <div class="calendar-day">8</div>
+                    <div class="calendar-day">9</div>
+                    <div class="calendar-day day-event">10</div>
+                    <div class="calendar-day">11</div>
+                    <div class="calendar-day">12</div>
+                    <div class="calendar-day">13</div>
+                    <div class="calendar-day">14</div>
+                    <div class="calendar-day">15</div>
+                    <div class="calendar-day day-event">16</div>
+                    <div class="calendar-day">17</div>
+                    <div class="calendar-day">18</div>
+                    <div class="calendar-day">19</div>
+                    <div class="calendar-day">20</div>
+                    <div class="calendar-day day-today">21</div>
+                    <div class="calendar-day">22</div>
+                    <div class="calendar-day">23</div>
+                    <div class="calendar-day">24</div>
+                    <div class="calendar-day">25</div>
+                    <div class="calendar-day">26</div>
+                    <div class="calendar-day">27</div>
+                    <div class="calendar-day">28</div>
+                    <div class="calendar-day">29</div>
+                    <div class="calendar-day">30</div>
+                    <div class="calendar-day day-other">1</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- RODAPÉ - Mantido conforme seu código original -->
+  <footer class="footer">
+    <img class="footer-logo" src="04 - Painel_user/img/UniHelp Logo.png" alt="UniHelp Logo" />
+    <div class="footer-container">
+      <div class="footer-column footer-brand">
+        <h2>Seu bem-estar é a<br><span class="highlight">nossa prioridade.</span></h2>
+        <p>Tem alguma dúvida ou precisa de ajuda? Envie uma mensagem e retornaremos o mais breve possível.</p>
+        <div class="footer-newsletter">
+          <input type="email" placeholder="Digite seu E-mail" />
+          <button><span>Enviar</span></button>
+        </div>
+        <p class="footer-copy">© 2025 UniHelp — Todos os direitos reservados.<br>
+          Desenvolvido por Kaliandrik, Aderlangio, Mateus e Guilherme.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Suporte</h3>
+        <ul>
+          <li><a href="#">Agendar Consulta</a></li>
+          <li><a href="#">Dúvidas Frequentes</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+          <li><a href="#">Termos de Uso</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Informações úteis</h3>
+        <ul>
+          <li><a href="#">Sobre a Empresa</a></li>
+          <li><a href="#">Equipe Profissional</a></li>
+          <li><a href="#">Serviços Oferecidos</a></li>
+          <li><a href="#">Convênios Atendidos</a></li>
+          <li><a href="#">Blog / Notícias</a></li>
+        </ul>
+      </div>
+
+
+      <div class="social">
+        <h3>Siga-nos</h3>
+        <ul>
+          <li><i class="fab fa-facebook-square"></i> <span>Facebook</span></li>
+          <li><i class="fab fa-instagram"></i> <span>Instagram</span></li>
+          <li><i class="fab fa-x-twitter"></i> <span>X</span></li>
+          <li><i class="fab fa-linkedin"></i> <span>LinkedIn</span></li>
+          <li><i class="fab fa-youtube"></i> <span>YouTube</span></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="04 - Painel_user/js/script.js"></script>
+</body>
+
+</html>
